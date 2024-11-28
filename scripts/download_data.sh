@@ -11,9 +11,8 @@ grep -oP '<Id>\K[0-9]+' raw/pmids.xml > raw/pmid_list.txt
 
 # Download metadata for each article
 echo "Downloading article metadata..."
-mkdir -p raw/articles
 while read pmid; do
-    curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=$pmid" > raw/articles/article-$pmid.xml
+    curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=$pmid" > raw/article-$pmid.xml
     sleep 1  # Pause to avoid overloading the API
 done < raw/pmid_list.txt
 
