@@ -36,14 +36,17 @@ filtered_data <- word_counts %>%
 
 # Plot the frequency of top words over time
 plot <- ggplot(filtered_data, aes(x = Year, y = Frequency, color = word, group = word)) +
-  geom_line(size = 1) +
+  geom_col(aes(fill = word), position = "dodge", alpha = 0.6) +  # Bar Chart
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
   scale_x_continuous(limits = c(min(filtered_data$Year), 2024)) +  # Set x-axis limits
   labs(title = "Trends in Top Words Over Time",
        x = "Year",
        y = "Frequency",
-       color = "Words") +
+       color = "Words",
+       fill = "Words") +
   theme_minimal()
 
 # Save the plot
-ggsave("graph/word_frequency_trend.png", plot = plot, width = 6, height = 6)
+ggsave("graph/word_frequency_trend.png", plot = plot, width = 10, height = 10)
 
