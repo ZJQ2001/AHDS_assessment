@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+process_titles        1
+total                 1
+
+Select jobs to execute...
+
+[Sat Nov 30 16:15:25 2024]
+rule process_titles:
+    jobid: 0
+    reason: Rules with neither input nor output files are always executed.
+    resources: tmpdir=/tmp
+
+[Sat Nov 30 16:15:25 2024]
+Error in rule process_titles:
+    jobid: 0
+
+RuleException:
+WorkflowError in file /home/jenny/AHDS_assessment_code_2670745/snakefile, line 41:
+Failed to open source file /home/jenny/AHDS_assessment_code_2670745/Rscript scripts/process_titles.R
+FileNotFoundError: [Errno 2] No such file or directory: '/home/jenny/AHDS_assessment_code_2670745/Rscript scripts/process_titles.R'
+  File "/home/jenny/AHDS_assessment_code_2670745/snakefile", line 41, in __rule_process_titles
+  File "/home/jenny/miniconda3/envs/AHDS_env/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-11-30T161524.875048.snakemake.log

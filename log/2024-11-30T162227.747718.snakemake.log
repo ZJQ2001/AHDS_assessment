@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+visualize_data        1
+total                 1
+
+Select jobs to execute...
+
+[Sat Nov 30 16:22:28 2024]
+rule visualize_data:
+    input: clean/processed_data_output.tsv
+    output: graph/word_frequency_trend.png
+    jobid: 0
+    reason: Missing output files: graph/word_frequency_trend.png
+    resources: tmpdir=/tmp
+
+[Sat Nov 30 16:22:31 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-11-30T162227.747718.snakemake.log
