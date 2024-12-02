@@ -23,7 +23,8 @@ To run the entire pipeline, use the provided Snakefile which orchestrates the ex
 snakemake
 If you want to do a commit run in BlueCrystal, run
 
-snakemake  --cores 1
+~/.bashrc
+snakemake  --cores 1  
 
 Before running, check the config file to make sure the request data is correct.
 
